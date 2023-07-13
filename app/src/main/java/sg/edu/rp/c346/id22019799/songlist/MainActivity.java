@@ -23,6 +23,8 @@ public class MainActivity extends AppCompatActivity {
     ListView lvResults;
     RadioGroup radioGrpStar;
     RadioButton radiobtn1,radiobtn2,radiobtn3,radiobtn4;
+    ArrayList<Song> data;
+    ArrayAdapter<Song> taskky;
 
 
     @Override
@@ -47,8 +49,8 @@ public class MainActivity extends AppCompatActivity {
         radiobtn4 = findViewById(R.id.radioButton4);
 
         DBHelper db = new DBHelper(MainActivity.this);
-        ArrayList<Song> data = db.getTasks();
-        //ArrayAdapter taskky = new ArrayAdapter(MainActivity.this,android.R.layout.simple_list_item_1,data);
+        data=new ArrayList<Song>();
+        ArrayAdapter taskky = new ArrayAdapter(MainActivity.this,android.R.layout.simple_list_item_1,data);
 
 
         btnInsert.setOnClickListener(new View.OnClickListener(){
@@ -75,7 +77,9 @@ public class MainActivity extends AppCompatActivity {
                 }else{
                     star="*****";
                 }
+                data=db.getTasks();
                 db.insertSong(title, singer,year,star);
+                taskky.notifyDataSetChanged();
 
             }
         });
@@ -120,6 +124,7 @@ public class MainActivity extends AppCompatActivity {
                     //}
 
                     //data.add(i,txt);
+
                     //taskky.notifyDataSetChanged();
                 //}
             }

@@ -14,19 +14,12 @@
         android:text="SHOW ALL SONGS WITH 5 STARS" />
 
     <Spinner
-        android:id="@+id/spinner"
+        android:id="@+id/spinnerSortStar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
-    <TextView
-        android:id="@+id/textView"
+    <ListView
+        android:id="@+id/lvSong"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="TextView" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="TextView" />
+        android:layout_height="match_parent" />
 </LinearLayout>

@@ -1,6 +1,8 @@
 package sg.edu.rp.c346.id22019799.songlist;
 
-public class Song {
+import java.io.Serializable;
+
+public class Song implements Serializable {
     private int id;
     private String title;
     private String singers;
@@ -15,9 +17,7 @@ public class Song {
         this.stars = stars;
     }
 
-    public int getId() {
-        return id;
-    }
+    public int getId() {return id;}
 
     public String getTitle() {
         return title;

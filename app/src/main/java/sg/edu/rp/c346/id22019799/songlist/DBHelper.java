@@ -98,10 +98,12 @@ public class DBHelper extends SQLiteOpenHelper {
             //  and returns true; moveToNext() returns false
             //  when no more next row to move to
             do {
-                // Add the task content to the ArrayList object
-                //  getString(0) retrieves first column data
-                //  getString(1) return second column data
-                //  getInt(0) if data is an integer value
+                int id = cursor.getInt(0);
+                String title = cursor.getString(1);
+                String singers = cursor.getString(2);
+                int year = cursor.getInt(3);
+                String stars = cursor.getString(4);
+                Song obj = new Song(id, title, singers, year, stars);
                 tasks.add(cursor.getString(1));
             } while (cursor.moveToNext());
         }
@@ -121,11 +123,11 @@ public class DBHelper extends SQLiteOpenHelper {
         if (cursor.moveToFirst()) {
             do {
                 int id = cursor.getInt(0);
-                String description = cursor.getString(1);
+                String title = cursor.getString(1);
                 String singers = cursor.getString(2);
                 int year = cursor.getInt(3);
                 String stars = cursor.getString(4);
-                Song obj = new Song(id, description, singers, year, stars);
+                Song obj = new Song(id,title, singers, year, stars);
                 tasks.add(obj);
             } while (cursor.moveToNext());
         }
@@ -142,11 +144,11 @@ public class DBHelper extends SQLiteOpenHelper {
         if (cursor.moveToFirst()) {
             do {
                 int id = cursor.getInt(0);
-                String description = cursor.getString(1);
+                String title = cursor.getString(1);
                 String singers = cursor.getString(2);
                 int year = cursor.getInt(3);
                 String stars = cursor.getString(4);
-                Song obj = new Song(id, description, singers, year, stars);
+                Song obj = new Song(id,title, singers, year, stars);
                 tasks.add(obj);
             } while (cursor.moveToNext());
         }
