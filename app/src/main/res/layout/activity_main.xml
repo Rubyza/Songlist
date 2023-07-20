@@ -36,7 +36,7 @@
         android:inputType="text" />
 
     <TextView
-        android:id="@+id/textViewYear"
+        android:id="@+id/textViewDate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Year" />

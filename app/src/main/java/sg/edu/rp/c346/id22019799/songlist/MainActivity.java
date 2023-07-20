@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -35,8 +34,8 @@ public class MainActivity extends AppCompatActivity {
         btnInsert = findViewById(R.id.buttonInsert);
         btnShowList = findViewById(R.id.buttonShowList);
         tvTitle = findViewById(R.id.textViewTitle);
-        tvSingers = findViewById(R.id.textViewTitle);
-        tvYear = findViewById(R.id.textViewTitle);
+        tvSingers = findViewById(R.id.textViewSingers);
+        tvYear = findViewById(R.id.textViewDate);
         tvStars = findViewById(R.id.textViewStars);
         lvResults = findViewById(R.id.songList);
         editTitle = findViewById(R.id.editTextTitle);
@@ -92,11 +91,11 @@ public class MainActivity extends AppCompatActivity {
                 // activity's Context
 
 
-                Song target = data.get(0);
+                //Song target = data.get(0);
 
                 Intent i = new Intent(MainActivity.this,
                         RetrieveActivity.class);
-                i.putExtra("data", target);
+                //i.putExtra("data", target);
                 startActivity(i);
 
                 //old stuff

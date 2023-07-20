@@ -19,7 +19,8 @@ public class RetrieveActivity extends AppCompatActivity {
    // Spinner starspinner;
     //Song song;
     ArrayList<Song> data;
-    ArrayAdapter<Song> taskky;
+    //ArrayAdapter<Song> taskky;
+    CustomAdapter taskky;
 
 
 
@@ -37,13 +38,19 @@ public class RetrieveActivity extends AppCompatActivity {
         btnShowStar=findViewById(R.id.btnSortStar);
         lvSong=findViewById(R.id.lvSong);
         data = new ArrayList<>();
-        taskky = new ArrayAdapter<>(RetrieveActivity.this,
-                android.R.layout.simple_list_item_1, data);
+        taskky = new CustomAdapter(this, R.layout.row, data);
+        //taskky = new ArrayAdapter<>(RetrieveActivity.this,
+                //android.R.layout.simple_list_item_1, data);
         lvSong.setAdapter(taskky);
         //starspinner=findViewById(R.id.spinnerSortStar);
         DBHelper db = new DBHelper(RetrieveActivity.this);
         data=db.getTasks();
         db.close();
+
+        data.add(new Song(0,"Home","Kit Chan",1998,"*****"));
+        data.add(new Song(2,"We Will Get There","Stefanie Sun",2002,"*****"));
+        data.add(new Song(3,"Our Singapore","JJ Lin/Dick Lee",2015,"*****"));
+
         ArrayAdapter taskky = new ArrayAdapter(RetrieveActivity.this,android.R.layout.simple_list_item_1,data);
         lvSong.setAdapter(taskky);
 
@@ -58,4 +65,6 @@ public class RetrieveActivity extends AppCompatActivity {
         //Log.d("Database Content", i +". "+data.get(i));
         //txt += i + ". " + data.get(i) + "\n";
     }
+
+
 }

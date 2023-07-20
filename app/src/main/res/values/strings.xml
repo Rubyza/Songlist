@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Songlist</string>
+    <string-array name="spinnerItems">
+        <item>1998</item>
+        <item>2002</item>
+        <item>2015</item>
+    </string-array>
 </resources>

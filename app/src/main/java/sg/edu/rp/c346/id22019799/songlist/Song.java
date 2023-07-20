@@ -1,6 +1,7 @@
 package sg.edu.rp.c346.id22019799.songlist;
 
 import java.io.Serializable;
+import java.util.Calendar;
 
 public class Song implements Serializable {
     private int id;
@@ -8,6 +9,7 @@ public class Song implements Serializable {
     private String singers;
     private int year;
     private String stars;
+
 
     public Song(int id, String title, String singers, int year, String stars) {
         this.id = id;
@@ -33,5 +35,11 @@ public class Song implements Serializable {
 
     public String getStars() {
         return stars;
+    }
+
+    public String toString() {
+        String str = id+"\n"+title+"\n"+singers +"\n"+year+" "+stars;
+
+        return str;
     }
 }
